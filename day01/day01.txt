@@ -193,4 +193,30 @@ Python Web
     2.模板的设置
         默认情况下,Flask会在程序目录中搜索一个templates的目录作为模板的存放目录
 
+    3.模板的渲染
+        作用: 在视图中,将模板文件(xx.html)渲染成字符串之后,再响应给浏览器
+        语法:
+            from flask import render_template
+            render_template('xxx.html')
+            返回值:
+                该模板中的字符串内容
+
+            传递变量到模板中
+            render_template('xxx.html',变量=值,变量=值,...)
+
+            在模板中获取变量的值
+            {{}}
+
+
+
+在 01-homework.html 中输出以下内容:
+歌名:<<绿光>>
+作词:宝强
+作曲:乃亮
+演唱:羽凡
+
+1.访问路径 http://localhost:5000/homework
+2.通过视图,渲染到 01-homework.html 模板上
+3.歌名,作词,作曲,演唱的数据 使用变量方式进行传递
+
 

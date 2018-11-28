@@ -30,5 +30,15 @@ def url():
 
     return "<a href='%s'>去往show</a>" % url
 
+@app.route('/admin/login/form/show/<name>/<age>')
+def show1(name,age):
+    return '参数为name%s, age%s' %(name,age)
+
+@app.route('/url1')
+def url1():
+    url = url_for('show1',name='你好',age='222')
+
+    return "<a href='%s'>去往show1</a>" % url
+
 if __name__ == '__main__':
     app.run(debug=True,port=1234,)

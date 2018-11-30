@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>姓名:{{params.name}}</h1>
+    <h1>年龄:{{params.age}}</h1>
+    <h1>薪水:{{params.salary}}</h1>
+
+    <!--输出元祖 -->
+    <h1>元祖:{{params.tup}}</h1>
+    <h1>元祖中 的第一个元素: {{params.tup[0]}}</h1>
+    <h1>元祖中 的第一个元素: {{params.tup.0}}</h1>
+
+    <!--输出列表 -->
+
+    <h1>列表:{{params.list}}</h1>
+    <h1>2:{{params.list.1}}</h1>
+
+    <!--输出字典 -->
+
+    <h1>字典:{{params.dic}}</h1>
+    <h1>C:{{params.dic.C}}</h1>
+
+    <!--输出对象 -->
+
+    <h1>对象:{{params.dog}}</h1>
+    <h1>name:{{params.dog.name}}</h1>
+    <h1>eat:{{params.dog.eat()}}</h1>
+
+
+</body>
+</html>

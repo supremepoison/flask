@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 声明 宏:接受一个字符串作为参数,将参数放p中打印输出-->
+    {% macro showP(str) %}
+        <h3>使用宏显示的内容: </h3>
+        <p>{{str}}</p>
+    {% endmacro %}
+
+    <!--使用宏 -->
+    <div>
+        {% for name in params.list %}
+            {{showP(name)}}
+        {% endfor %}
+    </div>
+<!--引入外部的宏 -->
+    <div>
+        {% import 'macros.html' as ms %}
+        {% for name in params.list %}
+            {{ms.show_p(name)}}
+        {% endfor%}
+
+    </div>
+</body>
+</html>

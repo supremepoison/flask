@@ -28,7 +28,7 @@
     500: Server Internal Error
 
     1.404 的错误处理
-        @app.route(404)
+        @app.errorhandler(404)
         def page_not_found(e):
             return render_template('404.html'),404
 
@@ -38,3 +38,97 @@
             return render_template('500.html'),500
 
     404.html 和 500.html 需要自定义
+
+
+3.修改配置
+    app = Flask(__name,
+        template_folder='muban',
+        static_folder='sta',
+        static_url_path='/s')
+
+    1.template_folder
+        指定保存模板的文件夹名称
+    2.static_folder
+        指定保存静态文件的文件夹名称
+    3.static_url_path
+        指定访问静态文件的路径
+
+4.请求(request) 和 响应 (request)
+    1.http 协议
+        Request:    请求消息
+            请求起始行
+                请求方式
+                请求路径
+                 协议以及版本号
+
+            请求消息头
+                key: value
+                Referrer: http://www.tmooc.cn
+                Referrer请求消息头:用于记录请求源地址
+
+            请求主体
+                由客户端浏览器带给服务器的数据或信息
+                只有POST 和 PUT 请求 才有请求主体
+
+        Response:   响应消息
+            响应起始行
+                协议和版本号
+                响应状态码
+                原因短句
+            响应消息头
+                key:value
+                Content-Type: image/png
+                    Content-Type消息头:告诉浏览器相应回来的内容是什么类型
+            响应主体
+                Response/ Preview
+
+    2.请求对象 - request
+        1.什么是请求对象
+            request - 请求对象,封装了所有与请求相关的信息
+            在Flask中可以通过 request 对象来获取请求信息
+            from flask import request
+        2.request中的常用成员
+            1.scheme: 获取请求方案(协议)
+            2.method: 获取请求的请求方式(重点)
+            3.args: 获取使用get请求方式提交过来的数据
+            4.form: 获取使用post请求方式提交过来的数据
+            5.cookies: 获取cookies中的相关信息
+            6.headers: 请求消息头的相关信息
+            7.files: 获取上传的文件
+            8.path: 获取请求的URL地址(不带参数)
+            9.full_path: 获取完整的请求资源的具体路径(有参数)
+            10.url: 获取完整的请求地址,从协议开始
+
+        3.获取使用get请求
+            1.get 请求方式
+				1.表单允许实现get请求
+					<form action="" method="get">
+						姓名：<input name="uname">
+					</form>
+				2.在请求地址后拼请求提交的参数
+					<a href= '05-get?uname=wc&upwd=wc123'></a>
+
+				获取 get 请求方式提交的数据 ：
+				request.args 封装的是get请求的数据
+
+		    2.post 请求方式
+		        只有在表单提交时才可以触发post请求
+		        request.form 获取post提交的数据
+
+ 作业:
+    1.访问地址为 06-form
+
+        1.如果是get请求, 则去往 06-form.html
+        包含一个表单，post 提交方式，提交地址为 /06-form，控件如下
+        1.文本框 - 用户名
+        2.密码框 - 用户密码
+        3.文本框 - 用户邮箱
+        4.文本框 - 真实姓名
+        5.提交按钮
+    2.在 07-post 中
+        获取所有请求提价的数据并打印在终端中
+
+
+
+
+    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_cached_json', '_get_data_for_json', '_get_file_stream', '_get_stream_for_parsing', '_load_form_data', '_parse_content_type', 'accept_charsets', 'accept_encodings', 'accept_languages', 'accept_mimetypes', 'access_route', 'application', 'args', 'authorization', 'base_url', 'blueprint', 'cache_control', 'charset', 'close', 'content_encoding', 'content_length', 'content_md5', 'content_type', 'cookies', 'data', 'date', 'dict_storage_class', 'disable_data_descriptor', 'encoding_errors', 'endpoint', 'environ', 'files', 'form', 'form_data_parser_class', 'from_values', 'full_path', 'get_data', 'get_json', 'headers', 'host', 'host_url', 'if_match', 'if_modified_since', 'if_none_match', 'if_range', 'if_unmodified_since', 'input_stream', 'is_json', 'is_multiprocess', 'is_multithread', 'is_run_once', 'is_secure', 'is_xhr', 'json', 'list_storage_class', 'make_form_data_parser', 'max_content_length', 'max_form_memory_size', 'max_forwards', 'method', 'mimetype', 'mimetype_params', 'on_json_loading_failed', 'parameter_storage_class', 'path', 'pragma', 'query_string', 'range', 'referrer', 'remote_addr', 'remote_user', 'routing_exception', 'scheme', 'script_root', 'shallow', 'stream', 'trusted_hosts', 'url', 'url_charset', 'url_root', 'url_rule', 'user_agent', 'values', 'view_args', 'want_form_data_parsed']

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="btnClick()">连接到05-get</button>
+    <script>
+        function btnClick(){
+            location.href = '/05-get?uname=Teacherxiaoze&upwd=1234456';
+        }
+    </script>
+    <h2> <a href= '05-get?uname=wc&upwd=wc123'>超链接传参</a></h2>
+
+    <form action="/05-get" method="get">
+        <p>
+            姓名: <input type="text" name="uname">
+        </p>
+        <p>
+            密码: <input type="password" name="upwd">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+
+</body>
+</html>

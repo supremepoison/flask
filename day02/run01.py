@@ -2,9 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/06-static')
+@app.route('/06-sta')
 def static_views():
-    return render_template('06-static.html')
+    return render_template('06-sta.html')
 
 @app.route('/05-macro')
 def macro_views():

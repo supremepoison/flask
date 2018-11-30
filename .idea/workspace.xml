@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94b889bf-8e77-4d4f-90e4-d7541d04aa07" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_finally/static/js/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/static/js/ckeditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_finally/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/static/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_finally/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_finally/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/release.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_finally/templates/time.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/time.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01/venv/Lib/importlib/_bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01/venv/Lib/importlib/_bootstrap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day02/run01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day02/run01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day03/day03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day03/day03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03/run1.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03/run1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03/templates/01-parent.html" beforeDir="false" afterPath="$PROJECT_DIR$/day03/muban/01-parent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03/templates/02-child.html" beforeDir="false" afterPath="$PROJECT_DIR$/day03/muban/02-child.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,16 +25,60 @@
     <SUITE FILE_PATH="coverage/Flask$ha.coverage" NAME="ha Coverage Results" MODIFIED="1543386059364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day01" />
     <SUITE FILE_PATH="coverage/Flask$run2.coverage" NAME="run2 Coverage Results" MODIFIED="1543389437274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day01" />
     <SUITE FILE_PATH="coverage/Flask$run1.coverage" NAME="run1 Coverage Results" MODIFIED="1543389248442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day01" />
-    <SUITE FILE_PATH="coverage/Flask$run1__1_.coverage" NAME="run1 (1) Coverage Results" MODIFIED="1543544321581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day03" />
     <SUITE FILE_PATH="coverage/Flask$run.coverage" NAME="run Coverage Results" MODIFIED="1543548533116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blog_finally" />
+    <SUITE FILE_PATH="coverage/Flask$run1__1_.coverage" NAME="run1 (1) Coverage Results" MODIFIED="1543571342306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day03" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/day03/day03.txt" />
+    </disable_hints>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day03/day03.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="731">
+              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day03/run1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/muban/06-form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/muban/01-parent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/muban/03-request.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -71,11 +126,16 @@
         <option value="$PROJECT_DIR$/day03/templates/01-parent.html" />
         <option value="$PROJECT_DIR$/day03/templates/02-child.html" />
         <option value="$PROJECT_DIR$/blog_finally/templates/list.html" />
-        <option value="$PROJECT_DIR$/day03/run1.py" />
         <option value="$PROJECT_DIR$/blog_finally/run.py" />
         <option value="$PROJECT_DIR$/blog_finally/templates/index.html" />
         <option value="$PROJECT_DIR$/blog_finally/templates/list2.html" />
+        <option value="$PROJECT_DIR$/day03/templates/404.html" />
+        <option value="$PROJECT_DIR$/day03/muban/01-parent.html" />
+        <option value="$PROJECT_DIR$/day03/muban/03-request.html" />
+        <option value="$PROJECT_DIR$/day03/muban/04-form.html" />
         <option value="$PROJECT_DIR$/day03/day03.txt" />
+        <option value="$PROJECT_DIR$/day03/muban/06-form.html" />
+        <option value="$PROJECT_DIR$/day03/run1.py" />
       </list>
     </option>
   </component>
@@ -84,6 +144,9 @@
     <option name="y" value="107" />
     <option name="width" value="1200" />
     <option name="height" value="646" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -101,13 +164,13 @@
             <path>
               <item name="Flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flask" type="462c0819:PsiDirectoryNode" />
-              <item name="blog_finally" type="462c0819:PsiDirectoryNode" />
+              <item name="day03" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flask" type="462c0819:PsiDirectoryNode" />
-              <item name="blog_finally" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="day03" type="462c0819:PsiDirectoryNode" />
+              <item name="muban" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,9 +183,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day03/static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\达内\Desktop\AID1808\Flask\blog_finally\templates" />
       <recent name="C:\Users\达内\Desktop\AID1808\Flask\blog_finally\static" />
@@ -140,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.run1 (1)">
     <configuration name="ha" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Flask" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,8 +327,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
         <item itemvalue="Python.run1 (1)" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.run2" />
         <item itemvalue="Python.run1" />
         <item itemvalue="Python.ha" />
@@ -280,23 +347,22 @@
       <updated>1543385278042</updated>
       <workItem from="1543542151490" duration="2392000" />
       <workItem from="1543546392562" duration="1411000" />
-      <workItem from="1543548326181" duration="1319000" />
+      <workItem from="1543548326181" duration="14045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5122000" />
+    <option name="totallyTimeSpent" value="17848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20107599" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Structure" order="1" weight="0.24949563" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32707775" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32707775" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -318,6 +384,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day03/run1.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/day01/day01.txt">
@@ -362,7 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -396,7 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,27 +524,6 @@
     <entry file="file://$PROJECT_DIR$/day02/day02.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/day03/templates/02-child.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day03/templates/01-parent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day03/run1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog_finally/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -503,10 +556,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/02-child.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/03-request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/01-parent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/04-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/06-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day03/day03.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="731">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/run1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

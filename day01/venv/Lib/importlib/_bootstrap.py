@@ -690,7 +690,7 @@ class BuiltinImporter:
 
     """Meta path import for built-in modules.
 
-    All methods are either class or static methods to avoid the need to
+    All methods are either class or sta methods to avoid the need to
     instantiate the class.
 
     """
@@ -763,7 +763,7 @@ class FrozenImporter:
 
     """Meta path import for frozen modules.
 
-    All methods are either class or static methods to avoid the need to
+    All methods are either class or sta methods to avoid the need to
     instantiate the class.
 
     """

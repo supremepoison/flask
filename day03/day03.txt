@@ -22,5 +22,19 @@
             {% block 块名%}
                 会覆盖掉父模板中同名block的内容
             {% endblock %}
-            
+
 2.自定义错误页面
+    404: Not Found
+    500: Server Internal Error
+
+    1.404 的错误处理
+        @app.route(404)
+        def page_not_found(e):
+            return render_template('404.html'),404
+
+    2.500 的错误处理
+        @app.errorhandler(500)
+        def internal_server_error(500)
+            return render_template('500.html'),500
+
+    404.html 和 500.html 需要自定义

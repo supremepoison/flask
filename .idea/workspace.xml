@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94b889bf-8e77-4d4f-90e4-d7541d04aa07" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_finally/static/js/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/static/js/ckeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_finally/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_finally/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_finally/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/release.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_finally/templates/time.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_finally/templates/time.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01/venv/Lib/importlib/_bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01/venv/Lib/importlib/_bootstrap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/run01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day02/run01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day03/day03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day03/day03.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day03/run1.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03/run1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day03/templates/01-parent.html" beforeDir="false" afterPath="$PROJECT_DIR$/day03/muban/01-parent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day03/templates/02-child.html" beforeDir="false" afterPath="$PROJECT_DIR$/day03/muban/02-child.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,50 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day03/day03.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day03/run1.py">
+        <entry file="file://$PROJECT_DIR$/day04/day04.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day03/muban/06-form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day03/muban/01-parent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day03/muban/03-request.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="220">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -136,13 +86,14 @@
         <option value="$PROJECT_DIR$/day03/day03.txt" />
         <option value="$PROJECT_DIR$/day03/muban/06-form.html" />
         <option value="$PROJECT_DIR$/day03/run1.py" />
+        <option value="$PROJECT_DIR$/day04/day04.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="200" />
     <option name="y" value="107" />
-    <option name="width" value="1200" />
+    <option name="width" value="1190" />
     <option name="height" value="646" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -153,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,21 +111,11 @@
               <item name="Flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flask" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Flask" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Flask" type="462c0819:PsiDirectoryNode" />
-              <item name="day03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Flask" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Flask" type="462c0819:PsiDirectoryNode" />
-              <item name="day03" type="462c0819:PsiDirectoryNode" />
-              <item name="muban" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,22 +287,24 @@
       <updated>1543385278042</updated>
       <workItem from="1543542151490" duration="2392000" />
       <workItem from="1543546392562" duration="1411000" />
-      <workItem from="1543548326181" duration="14045000" />
+      <workItem from="1543548326181" duration="14277000" />
+      <workItem from="1543798571204" duration="721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17848000" />
+    <option name="totallyTimeSpent" value="18801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20107599" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20376597" />
       <window_info id="Structure" order="1" weight="0.24949563" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32707775" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32707775" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -570,24 +512,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day03/muban/03-request.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day03/muban/01-parent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day03/muban/04-form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/day03.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -598,20 +533,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day03/day03.txt">
+    <entry file="file://$PROJECT_DIR$/day03/muban/01-parent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        <state relative-caret-position="264">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/muban/03-request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day03/run1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+        <state relative-caret-position="594">
+          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day04/day04.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>

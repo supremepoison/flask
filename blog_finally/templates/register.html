@@ -15,7 +15,7 @@
 			<h1>创建一个新账户！</h1>
 		</div>
 		<p></p>
-			<form action="#" method="post">
+			<form action="/register" method="post">
 				<ul class="left-form">
 					<h2>新账户:</h2>
 					<li>
@@ -39,7 +39,7 @@
               <div class="clear"> </div>
             </li>
 					<!--用于记录注册跳转来源，方便注册之后跳转之前的页面-->
-          <input type="hidden" name="source_url" value="{{ request.META.HTTP_REFERER }}">
+          <input type="hidden" name="source_url" >
 					<input type="submit" value="创建并登录">
 					<div class="clear"> </div>
 				</ul>

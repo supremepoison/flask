@@ -10,3 +10,231 @@ day03复习
 
         覆盖父模板中的同名块
 
+
+2.修改配置
+    app = FLask(
+        __name__,
+        template_folder = '指定模板目录名称',
+        static_folder = '指定静态文件目录名称',
+        static_url_path = '/访问静态文件的路径'
+    )
+
+3.请求
+    1.请求对象 - request
+        1.什么是 request
+            封装有浏览器带给服务器的信息
+            from flask import request
+        2.request 中的常用成员
+            1.method
+            2.args
+            3.form
+            4.url
+            5.path
+            6.full_path
+            7.scheme
+            8.headers
+              headers.get('Referer')
+
+    2.获取请求提交的数据
+        1.get
+            1.表单 method = 'get'
+            2.所有的地址栏提交 和 链接提交
+            <a href=/abc?name=xxx'></a>
+            <script>
+                location.href = '/abc?name=xxx'
+            </script>
+
+        2.post
+            1.表单 method = 'post'
+
+
+=====================================================================================
+
+day04笔记
+
+1.响应
+    1.什么是响应
+        响应是由服务器带给客户端的内容
+        响应内容可以使字符串,模板,重定向
+    2.响应字符串 或 模板
+        1.响应字符串
+            return '普通字符串'
+        2.响应模板
+            return render_template('xxx.html')
+            其本质 还是响应字符串
+    3.响应对象
+        响应对象: 将响应的内容封装到一个对象中,以便完成更多的响应行为
+
+        在Flask中,使用 make_response() 构建响应对象
+        from flask import make_response
+
+        @app.route('/xxx')
+        def xxx():
+            resp = make_response('响应内容')
+            resp = make_response(render_template('xxx.html'))
+            #允许调用resp中属性或方法们以便完成更多的响应行为
+            return resp
+    4.重定向
+        1.什么是重定向
+            由服务器端通知客户端重新向新的地址发送请求
+        2.语法
+            from flask import redirect
+            @app.route('/www')
+            def xxx():
+                xxxx xxxx
+                return redirect('重定向地址')
+2.文件上传
+    1.注意问题
+        表单中如果有文件上传的话,必须遵循以下两个要求:
+            1.表单提交方式method必须为post
+            2.表单的 enctype 属性的值必须为 multipart/form-data
+
+            <form method='post enctype='multipart/form-data'>
+            </form>
+    2.服务器端
+        1.获取上传文件
+            语法: request.files
+            作用: 获取上传的所有的文件
+
+            f = request.files['uimg']
+            从上传的文件中,将名称为 uimg 的文件获取出来并保存在f中
+        2.将文件保存到指定的目录处
+            语法: f.save('保存路径')
+            作用: 将文件保存到指定目录处
+            注意:
+                1.保存路径可以是相对路径也可以是绝对路径
+                2.保存路径要精确到文件名称
+                3.保存的目录必须是已存在的
+            ex:
+               f.save('static/'+f.filename)
+               f.filename : 能够获取出文件名
+3.模型 - Models
+    1.什么是模型
+        模型,是根据数据库中表结构创建出来的class
+        模型其实就是将数据表进行'类化',以类(对象)的方式来操作数据表(数据)
+        数据库中的每一张表到编程语言中就是一个class
+        表中的每一个列对应到编程语言中就是class中的一个属性
+        表中的每一条数据对应到编程语言中就是class的一个对象
+
+        模型:可以成为"模型类" 或 "实体类"
+
+    2.模型的框架 - ORM
+        1.什么ORM
+            ORM: Object Relational Mapping
+            简称: ORM , O/RM, O/R Mapping
+            中文: 对象关系映射
+        2.ORM框架的三大特征
+            1.数据表(Table)到编程类(Class)的映射
+                数据库中每一张表对应到编程语言中都有一个类
+                在ORM中:
+                    允许将数据表 自动 生成一个类
+                    允许将类 自动 生成一张数据表
+            2.数据类型的映射
+                数据表中的字段以及数据类型,对应到编程语言中都对应的属性和类型
+
+            3.关系映射
+				将数据库中表与表之间的关系 对应 到编程语言中类与类之间的关系
+				数据库中表与表之间的关系:
+				    1.一对一
+				        外键，主键，唯一约束
+						A表中的一条记录只能与B表中的一条记录相关联
+						B表中的一条记录只能与A表中的一条记录相关联
+
+				    2.一对多
+
+				        外键，主键
+						A表中的一条数据可以与B表中的任意多条数据相关联
+						B表中的一条数据只能与A表中一条数据相关联
+
+						ex:老师(Teacher)与课程(Course)
+							一门课程可以被多个老师所教授
+							一个老师最多只能教一门课程
+
+				    3.多对多
+				        A表中的一条数据可以与B表中的任意多条数据相关联
+				        B表中的一条数据也可以与A表中的任意多条数据相关联
+
+				        实现方式:
+				            增加第三张关联表来实现
+
+		3.ORM的优点
+		    1.封装了数据中所有的操作,大大的提高了开发效率
+		    2.可以省略庞大的数据访问层,即便不用SQL编码也能完成对数据的CRUD操作
+
+    3.Flask中的ORM框架
+        1.Python的ORM
+            比较常用的ORM框架 - SQLAlchemy
+            安装: sudo pip3 install SQLAlchemy
+        2.在Flask中
+            使用的也是SQLALchemy
+            但需要安装 Flask-SQLAlchemy 插件包
+            安装: sudo pip3 install flask-sqlalchemy
+
+    4.创建数据库 - flask
+        create database flask default charset utf8 collate utf8_general_ci;
+
+    5.在Flask中配置数据库
+        1.通过 app(Flask应用实例) 构建配置信息
+            app.config['SQLALCHEMY_DATABASE_URI']='mysql://用户名:密码@主机:端口号/数据库'
+            app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:123456@loaclhost:3306/flask'
+        2.创建数据库应用实例
+            from flask_sqlalchemy import SQLAlchemy
+            db = SQLAlchemy(app)
+    6.定义模型
+        语法:
+            class MODELNAME(db.Model):
+                __tablename__ = 'TABLENAME'
+                COLUMN_NAME = db.Column(db.TYPE,OPTIONS)
+
+            1.MODLENAME : 定的模型类的类名,通常参考表名
+            2.TABLENAME　: 映射到数据库中表的名称
+            3.COLUMN_NAME : 属性名,映射到数据表中就是列名
+            4.TYPE : 映射到列的数据类型
+            5.OPTIONS : 列选项
+
+            db.TYPE 列的数据类型:
+                类型名         python类型               说明
+            Integer             int                 普通整数,32位
+            SmallInterger       int                 小范围整数,16位
+            BigInterger         long                不限精度的整数
+            Float               float               浮点类型
+            Numeric             decimal.Decimal     定点类型
+            String              str                 变长字符串
+            Text                str                 变长字符串
+            Boolean             bool                布尔值
+            Date                datetime.date       日期
+            Time                datetime.time       时间
+            DateTime            datetime.datetime   日期和时间
+
+            OPTIONS 列选项
+            选项名                 说明
+            primary_key         如果设置为True表示该列为主键
+            unique              如果设置为True表示该列的值是唯一的
+            index               如果设置为True表示该列要创建索引
+            nullable            如果设置为True表示该列允许为空,默认允许为空
+            default             指定该列的默认值
+数据库工具:
+    1.Navicate for MySQL
+    2.Power Designer
+        数据库建模工具 -   ER图(Entity Relationship)
+
+
+ 作业
+    1.创建Student 模型类
+        表名: student
+        字段:
+            1.id 主键,自增
+            2.sname 姓名,长度为30的字符串不允许为空
+            3.sage 年龄,整数
+    2.创建 Teacher 模型类
+        表名: Teacher
+        字段:
+            1.id 主键,自增
+            2.tname 姓名,长度为30的字符串不允许为空
+            3.tage 年龄,整数
+            4.tbirth, 生日 日期类型, 允许为空
+    3.创建Course模型类
+        表名: course
+        字段:
+            1.id 主键,自增
+            2.cname 长度为30的字符串,不允许为空

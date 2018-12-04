@@ -1,0 +1,108 @@
+day05笔记
+
+1.数据库操作
+    1.插入
+        1.创建实体类的对象
+        2.完成插入
+            db.session.add(实体对象)
+            db.session.commit()
+
+    2.查询
+        1.基于 db.session 进行查询
+            1.db.session.query(Models1,Models2...)
+                参数:要查询的实体类(表),如果是多个实体类的话,相当于做多表连接查询
+                返回: 对应的类的一个查询对象
+
+            2.查询执行函数
+                目的: 在query()的基础上得到最终的数据
+                语法:db.session.query(Models).查询执行函数()
+                1.all():以列表的方式返回query对象中所有的查询数据
+                2.first():返回query对象中的的一个查询结果,如果没有结果返回None
+                3.first_or_404: 返回query对象中的第一个查询结果,如果没有结果则终止程序并响应404
+                4.count():返回query对象中的查询结果数量
+
+            3.查询过滤器函数
+				作用：在查询的基础上，筛选部分行数据
+				语法：db.session.query(...).过滤器函数().查询执行函数()
+				过滤器函数       说明
+				filter()         按指定条件进行过滤(多表,单表,定值,不定值)
+				filter_by()      按等值条件过滤时使用
+				limit()          按限制行数获取
+				order_by()       根据指定条件进行排序
+				group_by()       根据指定条件进行分组
+
+				过滤器函数详解：
+
+				1.filter()
+					注意：条件必须由 模型类.属性 构成
+					1.查询年龄大于30的Users的信息
+						db.session.query(Users).filter(Users.age>30).all()
+
+					2.查询年龄大于30并且id大于1的Users的信息
+						db.session.query(Users).filter(Users.age>30,Users.id>1).all()
+
+					3.查询年龄大于30或者id大于1的Users的信息
+						注意：查询 或 的操作，要借助于 or_()
+						db.session.query(Users).filter(or_(Users.age>30,Users.id>1)).all()
+
+					4.查询id为2的Users的信息
+						注意：等值判断必须用 ==
+						db.session.query(Users).filter(Users.id==2).all()
+
+					5.查询 email 中包含 'w' 的Users的信息 - 模糊查询
+						注意：模糊查询like需要使用实体类中属性提供的like()
+						db.session.query(Users).filter(Users.email.like('%w%')).all()
+
+					6.查询 id 在 [2,4] 之间的 Users 的信息
+						注意：模糊查询in需要使用实体类中属性提供的in_([])
+						db.seesion.query(Users).filter(Users.id.in_([2.4])).all()
+
+				    7.查询 age 在(30,50)之间的 Users 的信息
+				        db.session.query(Users).filter(Users.age.between(30,50)).all()
+
+
+
+				2.filter_by()
+				    注意:只能做等值判断,不能做不等值
+					查询 id=5的Users的信息
+					db.session.query(Users).filter_by(id=5).all()
+
+				3.limit()
+				    1.获取 users 表中的前两条数据
+					    result = db.session.query(Users).limit(2).all()
+					2.获取 users 表中过滤前三条数据后 剩余的前两条数据
+					    result = db.session.query(Users).limit(2).offset(3).all()
+
+				4.order_by()
+					# 按照id列的值降序排序
+					db.session.query(Users).order_by("id desc")
+					# 按照age列的值降序排序，二级排序按照id升序排序
+					db.session.query(Users).order_by("age desc,id asc").all()
+
+				5.group_by()
+				    1.将 users 表中的数据按照 age 进行分组
+					db.session.query(Users.age).group_by('age').all()
+
+				6.聚合函数
+				    1.查询 users 表中所有人的平均年龄
+				        select avg(age) from users;
+
+                        from sqlachemy import fuc
+				        db.session.query(func.聚合函数(列名).label('别名')).all()
+				        db.session.query(func.avg(User.age).label('avgAge')).all()
+
+				    2.users表中,按年龄分组,再查每组的年龄平均值
+				        select age,avg(age) from users group by age
+
+				    函数:
+				        1.func.avg()
+				        2.func.sum()
+				        3.func.max()
+				        4.func.min()
+				        5.func.count()
+
+
+
+
+2.基于 Models 类 进行查询
+    Models.query 查询过滤器函数().查询执行函数()

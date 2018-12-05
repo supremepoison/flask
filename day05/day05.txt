@@ -55,7 +55,7 @@ day05笔记
 
 					6.查询 id 在 [2,4] 之间的 Users 的信息
 						注意：模糊查询in需要使用实体类中属性提供的in_([])
-						db.seesion.query(Users).filter(Users.id.in_([2.4])).all()
+						db.seesion.query(Users).filter(Users.id.in_([2,4])).all()
 
 				    7.查询 age 在(30,50)之间的 Users 的信息
 				        db.session.query(Users).filter(Users.age.between(30,50)).all()
@@ -102,7 +102,15 @@ day05笔记
 				        5.func.count()
 
 
-
+                filter()/filter_by() :  where
+                order_by() :          order_by
+                group_by() :          group_by
+                limit(n)/offset(m): limit m,n
 
 2.基于 Models 类 进行查询
+    单表,所有列的查询推荐使用Models
+
     Models.query 查询过滤器函数().查询执行函数()
+    Models.query.all()
+    Models.query.filter().all()
+    Models.query.filter_by().all()

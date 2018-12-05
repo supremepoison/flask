@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,redirect
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
 from sqlalchemy import or_
@@ -32,6 +32,8 @@ class Users(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     age = db.Column(db.Integer)
     email = db.Column(db.String(120), unique=True)
+    isActive =db.Column(db.Boolean,default=True)
+    wife = db.relationship('Wife', backref='user',uselist=False)
 
     def __init__(self, username, age, email):
         self.username = username
@@ -41,19 +43,12 @@ class Users(db.Model):
     def __repr__(self):
         return '<Users:%r>' % self.username
 
-
-class Student(db.Model):
-    __tablename__ = 'student'
-    id = db.Column(db.Integer, primary_key=True)
-    sname = db.Column(db.String(30), nullable=False)
-    sage = db.Column(db.Integer)
-
-    def __init__(self, sname, sage):
-        self.sname = sname
-        self.sage = sage
-
-    def ___repr__(self):
-        return '<Student%r>' % self.sname
+class Wife(db.Model):
+    __tablename__ = 'wife'
+    id = db.Column(db.Integer,primary_key=True)
+    wname = db.Column(db.String(30))
+    #增加对 USers的  一对一的引用关系
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
 
 
 class Teacher(db.Model):
@@ -62,6 +57,7 @@ class Teacher(db.Model):
     tname = db.Column(db.String(30), nullable=False)
     tage = db.Column(db.Integer)
     tbirth = db.Column(db.Date)
+    course_id = db.Column(db.Integer,db.ForeignKey('course.id'))
 
     def __init__(self, tname, tage, tbirth):
         self.tname = tname
@@ -77,11 +73,45 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     cname = db.Column(db.String(30), nullable=False)
 
-    def __int__(self, cname):
+    #关系属性和反向引用关系
+    #关联属性: course对象中通过哪个属性能够得到对应的所有的teacher对象
+    #反向引用: 在teacher对象中通过哪个属性能够得到他对应的Course
+
+    teachers = db.relationship('Teacher',backref='course', lazy='dynamic')
+
+    def __init__(self, cname):
         self.cname = cname
 
-    def __recp__(self):
+    def __repr__(self):
         return '<Course:%r>' % self.cname
+
+
+class Student(db.Model):
+    __tablename__ = 'student'
+    id = db.Column(db.Integer, primary_key=True)
+    sname = db.Column(db.String(30), nullable=False)
+    sage = db.Column(db.Integer)
+    class_id = db.Column(db.Integer,db.ForeignKey('classes.id'))
+
+    def __init__(self, sname, sage):
+        self.sname = sname
+        self.sage = sage
+
+    def ___repr__(self):
+        return '<Student%r>' % self.sname
+
+class Classes(db.Model):
+    __tablename__ = 'classes'
+    id = db.Column(db.Integer, primary_key=True)
+    cname = db.Column(db.String(30), nullable=False)
+    students = db.relationship('Student',backref = 'classes', lazy='dynamic')
+
+    def __init__(self,cname):
+        self.cname = cname
+
+    def __repr__(self):
+        return '<Classes%r>' % self.cname
+
 
 
 # 将创建好的实体类映射回数据库
@@ -91,7 +121,7 @@ db.create_all()
 @app.route('/01-add')
 def add_views():
     # 创建users对象并插入到数据库中
-    users = Users('in', 20, 'IN@123.com')
+    users = Users('superman', 333, 'I33@123.com')
     db.session.add(users)
     db.session.commit()
     return 'Add OK'
@@ -167,19 +197,130 @@ def query_views():
 @app.route('/04-queryall')
 
 def queryall():
-    users = Users.query.all()
+    users = Users.query.filter_by(isActive=True).all()
 
     return render_template('04-queryall.html',users=users)
 
-@app.route('/05-update')
+@app.route('/05-update',methods=['GET','POST'])
 def update_views():
-    #接受前段传递过来的参数 id
-    id = request.args.get('id')
 
-    #根据id查询出对应的对象
+
+    if request.method == 'GET':
+        #接受前段传递过来的参数 id
+        id = request.args.get('id')
+
+        #根据id查询出对应的对象
+        user = Users.query.filter_by(id=id).first()
+        #将查询出来的对象发送到05-update.html中进行显示
+        return  render_template('05-update.html',user=user)
+    else:
+        id = request.form['id']
+        name = request.form['uname']
+        age = request.form['uage']
+        email = request.form['email']
+
+        user = Users.query.filter_by(id=id).first()
+
+        user.username = name
+        user.age=age
+        user.email=email
+        db.session.add(user)
+
+        return redirect('/04-queryall')
+
+@app.route('/06-delete')
+def update_users():
+    id = request.args['id']
     user = Users.query.filter_by(id=id).first()
-    #将查询出来的对象发送到05-update.html中进行显示
-    return  render_template('05-update.html',user=user)
+    # db.session.delete(user)
+    user.isActive = False
+    db.session.add(user)
+    #将users的isActive的值更改为False来表示删除
+    return redirect('/04-queryall')
+
+@app.route('/08-insert')
+def insert_views():
+    c1 = Course('钢管舞')
+    c2 = Course('爵士舞')
+    db.session.add(c1)
+    db.session.add(c2)
+    return 'Insert ok'
+
+@app.route('/09-register-teacher')
+def register_teacher():
+    # #方案1:关联属性
+    # tea1 = Teacher('魏老师',50,'1985-10-01')
+    # tea1.course_id = 1
+    # db.session.add(tea1)
+    # db.session.add(tea1)
+
+    #方案2:通过反向引用属性关联属性
+    tea2= Teacher('王老师',45,'1975-10-01')
+    #查询id为1的Courese信息
+    course = Course.query.filter_by(id=1).first()
+    tea2.course = course
+    db.session.add(tea2)
+    return 'Register Teacher Ok'
+
+@app.route('/10-query')
+def query10_views():
+    # #通过course对象查询对应所有的teacher们
+    # course = Course.query.filter_by(id=1).first()
+    # #teachers提供了对应的teacher的查询
+    # teachers = course.teachers.all()
+    #
+    # print('课程名称:'+course.cname)
+    # print('对应的老师们:')
+    # for tea in teachers:
+    #     print('姓名:%s,生日:%s' % (tea.tname,tea.tbirth))
+
+    #通过 teacher 得到对应的course
+    tea = Teacher.query.filter_by(id=1).first()
+    course = tea.course
+    print('教师姓名:%s'% tea.tname)
+    print('所教课程:%s'% course.cname)
+    return  'Query Ok'
+
+
+
+
+@app.route('/11-register-stu',methods=['GET','POST'])
+def register_stu():
+    if request.method == 'GET':
+        #查询classes表中所有的数据
+        list = Classes.query.all()
+        return render_template('11-register-stu.html',list=list)
+    else:
+        name = request.form['name']
+        age = request.form['age']
+        classes = request.form['class']
+
+
+        #构建Student对象
+        student = Student(name,age)
+        student.class_id = classes
+        #将对象保存进数据库
+        db.session.add(student)
+        return redirect('/12-students')
+
+@app.route('/12-students')
+def student():
+    list = Student.query.all()
+
+    return render_template('12-students.html',list=list)
+
+@app.route('/13-wife')
+def wife_users():
+    #通过wife找users
+    wife = Wife.query.filter_by(id=7).first()
+    user = wife.user
+    print('Wife:%s' % wife.wname)
+    print('User:%s' % user.username)
+    return 'query ok '
+
+    #通过users找wife
+
+
 
 
 if __name__ == '__main__':

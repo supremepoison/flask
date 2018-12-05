@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/05-update" method="post">
+
         <p>
             姓名:<input type="text" name="uname" value="{{ user.username }}">
+            <input type="hidden" name="id" value="{{ user.id }}">
         </p>
         <P>
             年龄:<input type="number" name="uage" value="{{ user.age }}">

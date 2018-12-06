@@ -255,10 +255,12 @@ def register_teacher():
     # db.session.add(tea1)
 
     #方案2:通过反向引用属性关联属性
-    tea2= Teacher('王老师',45,'1975-10-01')
+    tea2= Teacher('测试2',50,'1975-10-01')
     #查询id为1的Courese信息
-    course = Course.query.filter_by(id=1).first()
+    course = Course.query.filter_by(id=2).first()
+    print(course)
     tea2.course = course
+    print(tea2.course)
     db.session.add(tea2)
     return 'Register Teacher Ok'
 

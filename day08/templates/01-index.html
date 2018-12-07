@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if lname %}
+    <p>欢迎:{{lname}}</p>
+    <a href="/01-logout">退出</a>
+    {% else %}
+    <a href='/01-login'>登录</a>
+    {% endif %}
+
+</body>
+</html>
